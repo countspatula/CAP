@@ -25,7 +25,7 @@ var app = {
 
 
         MapAzure.initialize();
-       // MapAzure.SaveData("New Point2", "new description2", "#C42244", -77.0234, 38.91322);
+        MapAzure.SaveData("Platform Studios", "Home of Yes Yes BD and Smashed Crab Studio", "#C42244", -0.332070, 53.747486);
         MapAzure.loadData(function (result) {
             $("<li>" + result.title + " " + result.longitude + " " + result.latitude + "</li>").appendTo('#list');
             

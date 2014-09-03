@@ -2,7 +2,7 @@
     L.mapbox.accessToken = 'pk.eyJ1IjoiaHVudHppZSIsImEiOiJpNXg4azNvIn0.Kac0yf-wd4SuLaWaWY-H2w';
     var map = L.mapbox.map('map-one', 'examples.map-i86l3621', {
         scrollWheelZoom: false
-    }).setView([38.8929, -77.0252], 14);
+    }).setView([53.76, -0.3325], 12);
 
     var myLayer = L.mapbox.featureLayer().addTo(map);
     var geoJson = [];
