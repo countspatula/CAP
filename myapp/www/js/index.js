@@ -25,9 +25,13 @@ var app = {
 
 
         MapAzure.initialize();
-        //  MapAzure.SaveData("shiiiit", 100, 100);
+        //MapAzure.SaveData("New Point", -77.0252, 38.91337);
         MapAzure.loadData(function (result) {
             $("<li>" + result.title + " " + result.longitude + " " + result.latitude + "</li>").appendTo('#list');
+            
+            setPoint(result);
+            
+            
         });
         //        var ItemTable = client.getTable("Item");
         //

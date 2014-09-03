@@ -1,16 +1,20 @@
 {   L.mapbox.accessToken = 'pk.eyJ1IjoiaHVudHppZSIsImEiOiJpNXg4azNvIn0.Kac0yf-wd4SuLaWaWY-H2w';
         var map = L.mapbox.map('map-one', 'examples.map-i86l3621', {scrollWheelZoom: false}).setView([38.8929,-77.0252], 14);
             
-        var locations = L.mapbox.featureLayer({
+        
+        
+      var setPoint = function(result){
+          
+        L.mapbox.featureLayer({
             
         type: 'Feature',
         geometry: {
             type: 'Point',
-            coordinates: [-77.0252, 38.91337]
+            coordinates: [result.longitude, result.latitude]
         },
             
         properties: {
-            title: 'Crime',
+            title: result.title,
             description: 'Crime is occuring',
             
             'marker-size': 'large',
@@ -24,6 +28,7 @@
             
             
         }}).addTo(map);
-        
-
+          
+      }
+ 
 }
