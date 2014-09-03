@@ -19,30 +19,27 @@
 var app = {
     // Application Constructor
     initialize: function () {
-
         $('#temp').text("tom is a fag");
 
         this.bindEvents();
 
-        var client = new WindowsAzure.MobileServiceClient("https://poop.azure-mobile.net/", "OleDjBSHAAhSOeEkZCpNWoFXYrThYw21");
 
-        var item = {
-            text: "Tim is a cool guy"
-        };
-
-        var ItemTable = client.getTable("Item");
-
-        ItemTable.insert(item);
-       console.log("ppppooooo"+ItemTable.read().toString());
-        ItemTable.lookup("C7D1969F-D94F-4515-B2D3-89E4FA1594F6").done(function(result){
-            console.log(result.text + "FYGFEIOUFBEIOFJBEOJEOIJNFO");
-            $('#temp').text(result.text);
-        },function(err){
-            $('#temp').text(err);
-        }
-                                                                     );
-      
-        
+        MapAzure.initialize();
+        //  MapAzure.SaveData("shiiiit", 100, 100);
+        MapAzure.loadData(function (result) {
+            $("<li>" + result.title + " " + result.longitude + " " + result.latitude + "</li>").appendTo('#list');
+        });
+        //        var ItemTable = client.getTable("Item");
+        //
+        //        ItemTable.insert(item);
+        //        console.log("ppppooooo" + ItemTable.read().toString());
+        //        ItemTable.lookup("C7D1969F-D94F-4515-B2D3-89E4FA1594F6").done(function (result) {
+        //            console.log(result.text + "FYGFEIOUFBEIOFJBEOJEOIJNFO");
+        //            $('#temp').text(result.text);
+        //        }, function (err) {
+        //            $('#temp').text(err);
+        //        });
+        //
 
 
 
