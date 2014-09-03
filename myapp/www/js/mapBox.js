@@ -5,15 +5,21 @@
     }).setView([38.8929, -77.0252], 14);
 
     var myLayer = L.mapbox.featureLayer().addTo(map);
-    var geoJson = [{
+    var geoJson = [];
+    
+    var setPoint = function(result)
+    {
+       var newPoint = 
+        {
             "type": "Feature",
             "geometry": {
                 "type": "Point",
-                "coordinates": [-77.0252, 38.91337]
+                "coordinates": [result.longitude, result.latitude]
             },
             "properties": {
-                "title": "CRIME",
-                "description": "TOO MUCH CRIME",
+                "title": result.title,
+                "description": result.description,
+                "marker-color": result.colour,
                 "icon": {
                     "iconUrl": "img/marker.png",
                     "iconSize": [50, 50], // size of the icon
@@ -22,8 +28,14 @@
                     "className": "dot"
                 }
             }
-}
-];
+       };
+       
+       geoJson.push(newPoint);
+        
+            myLayer.setGeoJSON(geoJson);
+        
+    }
+    
     myLayer.on('layeradd', function (e) {
         var marker = e.layer,
             feature = marker.feature;
@@ -31,7 +43,7 @@
 
     });
 
-    myLayer.setGeoJSON(geoJson);
+
     //    var locations = L.mapbox.featureLayer({
     //
     //        type: 'Feature',
