@@ -3,12 +3,15 @@ var MapAzure = {
     initialize: function () {
         MapAzure.client = new WindowsAzure.MobileServiceClient("https://poop.azure-mobile.net/", "OleDjBSHAAhSOeEkZCpNWoFXYrThYw21");
     },
-    SaveData: function (text, long, lat) {
+    SaveData: function (text, description, colour, long, lat) {
         var itemTable = MapAzure.client.getTable("Item");
         var item = {
             title: text,
             longitude: long,
-            latitude: lat
+            latitude: lat,
+            colour: colour,
+            description: description
+
         };
         itemTable.insert(item);
     },
