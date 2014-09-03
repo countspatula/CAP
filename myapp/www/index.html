@@ -72,50 +72,7 @@
         <script type="text/javascript" src="js/MobileServices.Web-1.1.3.min.js"></script>
         <script type="text/javascript" src="js/mapBox.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-        
-    </body>
-        L.mapbox.accessToken = 'pk.eyJ1IjoiaHVudHppZSIsImEiOiJpNXg4azNvIn0.Kac0yf-wd4SuLaWaWY-H2w';
-        L.mapbox.map('map-one', 'examples.map-i86l3621', {
-            scrollWheelZoom: false
-        }).setView([38.8929, -77.0252], 14);
 
-        L.mapbox.featureLayer({
-
-            type: 'Feature',
-            geometry: {
-                type: 'Point',
-                coordinates: [-77.0252, 38.91337]
-            },
-
-            properties: {
-                title: 'Crime',
-                description: 'Crime is occuring',
-
-                'marker-size': 'large',
-                'marker-color': '#BE9A6B',
-                'marker-symbol': 'cafe'
-
-            }
-        }).addTo(map);
-
-
-        locations.on('layeradd', function (e) {
-            var marker = e.layer;
-            marker.setIcon(L.icon({
-                iconUrl: 'marker.png',
-                iconSize: [56, 56],
-                iconAnchor: [28, 28],
-                popupAnchor: [0, -34]
-            }));
-        });
-    </script>
-    <div id="bottom-bar" class='menu'></div>
-    <script type="text/javascript" src="js/MobileServices.Web-1.1.3.min.js"></script>
-
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/MapAzure.js"></script>
     <script type="text/javascript">
         app.initialize();
